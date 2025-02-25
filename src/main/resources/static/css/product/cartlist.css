@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cart {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.cart h1 {
+    font-family: 'BMJUA',sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+.cart-items table, .cart-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-items th {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 25px;
+}
+.cart-items td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+}
+.cart-summary th, .cart-summary td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 25px;
+}
+
+.product-img {
+    max-width: 100px;
+    height: auto;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity button {
+    padding: 5px 10px;
+}
+
+.quantity input {
+    width: 40px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.cart-summary {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cart-actions a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    padding: 10px 15px; /* 패딩 설정 */
+    margin: 0 5px; /* 간격 설정 */
+    font-size: 14px;
+    border: 1px solid #ccc; /* 경계선 */
+    background-color: #f9f9f9; /* 배경색 */
+    color: #333; /* 글자색 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.cart-actions a:hover {
+    background-color: #f7f7f7; /* 배경색 변화 */
+    color: #C6B4FF;
+    border-color: #C6B4FF;
+}
+
+.cart-actions button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-actions button:hover {
+    background-color: #5e5e5e;
+}
+
+.cart_choice_box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.cart_choice_box a:hover {
+    background-color: #f7f7f7; /* 배경색 변화 */
+    color: #C6B4FF;
+    border-color: #C6B4FF;
+}
+
+.cart_choice a {
+    align-items: center;
+    padding: 6px;
+}
+
+.cart_choice a:nth-child(1){
+    background-color: black;
+    color: white;
+    border: 1px solid #858585;
+}
+.cart_choice a:nth-child(1):hover{
+    background-color: #5e5e5e; /* 배경색 변화 */
+}
+.cart_choice a:nth-child(2){
+    border: 1px solid #858585;
+}
+.cart_choice a:nth-child(3){
+    border: 1px solid #858585;
+}
+
+.quantity {
+    display: flex;
+}
+
+.quantity button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 30px;
+    height: auto;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.quantity button:hover {
+    background-color: #5e5e5e;
+}
+
+.input-box {
+    width: 40px;
+    text-align: center;
+    border: none;
+    padding: 8px 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Hide the number input spin buttons */
+.input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-box[type="number"] {
+    -moz-appearance: textfield;
+}
+.page-link {
+    color: #8268c5;
+}
+.page-link:hover{
+    color: #c6b4ff;
+}

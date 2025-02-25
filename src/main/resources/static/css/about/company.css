@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* companyInfo css 시작 */
+.company__canter{
+    text-align: center;
+}
+/* 타이틀 css */
+.company__tit_img img{
+    width: 900px;
+    height: 500px;
+    margin: 30px;
+}
+
+.company__tit_info p{
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 33px;
+    margin: 30px;
+}
+.company__info{
+    padding: 75px 60px;
+    margin: 40px;
+    border: 1px solid #C6B4FF;
+    border-radius: 15px;
+}
+
+.company__info p{
+    font-size: 21px;
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+strong{
+    font-weight: 800;
+
+}
+
+/* Office css 설정 */
+.company__off_img img{
+    width: 900px;
+    height: 600px;
+}
+.company__off_title{
+    margin: 15px 300px;
+}
+.company__off_title p{
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 32px;
+
+    border: 1px solid #C6B4FF;
+    background-color: #C6B4FF;
+}
+.company__off_info{
+    border: 1px solid #C6B4FF;
+    border-radius: 15px;
+    padding: 70px;
+    margin: 20px 38px;
+}
+.company__off_info p{
+    padding: 3px;
+
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+}
+
+/* 맨 아래 강조 효과*/
+.company__off_info span{
+    font-size: 24px;
+    font-weight: 400;
+    color: #8268c5;
+}
+
+/* !!!!!! companyIntro css 끝 !!!!!!! */
+
+/* companyIntro css 시작 */
+.office__center{
+    text-align: center;
+}
+/* 타이틀 이미지 크기*/
+.office__tit_img img{
+    width: 900px;
+    height: 500px;
+}
+.office__tit_info{
+    font-size: 36px;
+    font-weight: bolder;
+    margin: 30px;
+}
+/* 회사 소개 텍스트 설정*/
+.office__info{
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+
+    border: 1px solid #C6B4FF;
+    border-radius: 15px;
+    padding: 50px;
+    margin: 0px 80px;
+}
+.office__info span{
+    font-weight: 500;
+}
+.office__info p{
+    margin: 6px;
+}
+
+/* 마인드맵 표 css */
+.office__story_img{
+    margin-top: 150px;
+}
+
+.office__tit_text{
+    font-size: 27px;
+    font-weight: bolder;
+    margin: 40px 530px;
+    border: 1px solid #C6B4FF;
+    background-color: #C6B4FF;
+}
+.office__text{
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+
+    border: 1px solid #C6B4FF;
+    border-radius: 15px;
+    padding: 50px;
+    margin: 0px 63px;
+}
+.office__text p{
+    margin: 6px;
+}
+
+
+/* !!!!!!!!!! companyIntro css 끝 !!!!!!!!!!*/
+
+
+/* appForm css 시작*/
+
+
+
+

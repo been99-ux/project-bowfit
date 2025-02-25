@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 부트스트랩 아이콘 라이브러리 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 부트스트랩 동작 스크립 다운로드! -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 제이쿼리  -->
+    <script src="/js/jquery-3.7.1.min.js"></script>
+
+    <!-- 내 스타일  -->
+    <link href="/css/main/adminPage.css"
+          rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div>
+                    <span class="admin_page"> Admin Page</span>
+                <a class="admin_title" th:href="@{/main}">BowFit.</a>
+            </div>
+        </div>
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item" data-target="home">
+                <a href="#home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item" data-target="products">
+                <a href="#products">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span>Products</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item" data-target="member">
+                <a href="#member">
+                    <i class="bi bi-people-fill"></i>
+                    <span>&nbsp;&nbsp;&nbsp;Member</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item" data-target="community">
+                <a href="#community">
+                    <i class="bi bi-chat-left-text"></i>
+                    <span>&nbsp;&nbsp;&nbsp;Community</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item" data-target="notifications">
+                <a href="#notifications">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span>Notifications</span>
+                </a>
+            </li>
+        </ul>
+        <div class="account-info">
+            <div class="account-info-picture">
+                <img src="/images/main/banner2.jpg" alt="Account">
+            </div>
+            <div class="account-info-name">Bowfit Team.</div>
+            <button class="account-info-more">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="app-content">
+        <div class="app-content-header">
+            <h1 class="app-content-headerText">Products</h1>
+            <button class="mode-switch" title="Switch Theme">
+                <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+                    <defs></defs>
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+
+        <!-- products 사이드바 공간 -->
+        <div id="products" class="content-area">
+            <div class="app-content-actions">
+                <!-- ------------------------상품추가 모달 창 ------------------------------------------------------>
+                <button class="app-content-headerButton" data-bs-toggle="modal" data-bs-target="#addProductModal">상품 추가</button>
+
+                <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #30446a; color: white">
+                                <h1 class="modal-title fs-5" id="addProductModalLabel">상품 등록</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="productImage" class="form-label">상품 이미지</label>
+                                        <input class="form-control" type="file" id="productImage">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="productName" class="form-label">상품명</label>
+                                        <input type="text" class="form-control" id="productName">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="productCategory" class="form-label">카테고리</label>
+                                        <select class="form-select" id="productCategory">
+                                            <option value="티셔츠/원피스">티셔츠/원피스</option>
+                                            <option value="점퍼">점퍼</option>
+                                            <option value="아우터/패딩">아우터/패딩</option>
+                                            <option value="레인코트/신발">레인코트/신발</option>
+                                            <option value="한복/드레스">한복/드레스</option>
+                                            <option value="악세서리">악세서리</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="productColor" class="form-label">색상</label>
+                                        <input type="text" class="form-control" id="productColor" placeholder="예: 빨강, 파랑, 노랑, 검정">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="productSize" class="form-label">사이즈</label>
+                                        <input type="text" class="form-control" id="productSize" placeholder="예: S, M, L, XL">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="productPrice" class="form-label">가격</label>
+                                        <input type="number" class="form-control" id="productPrice">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                <button type="button" class="btn btn-primary" onclick="addProduct()">저장</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- -------------------------모달창 끝 ------------------------------------------------------------------->
+                <input class="search-bar" placeholder="Search..." type="text">
+                <div class="app-content-actions-wrapper">
+                    <div class="filter-button-wrapper">
+                        <button class="action-button filter jsFilter"><span>Filter</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
+                        <div class="filter-menu">
+                            <label>카테고리</label>
+                            <select>
+                                <option>모든 카테고리</option>
+                                <option>티셔츠/원피스</option>
+                                <option>점퍼</option>
+                                <option>아우터/패딩</option>
+                                <option>레인코트/신발</option>
+                                <option>한복/드레스</option>
+                                <option>악세서리</option>
+                            </select>
+                            <label>판매수</label>
+                            <select>
+                                <option>모든 카테고리</option>
+                                <option>가장 높은순</option>
+                                <option>가장 낮은순</option>
+                            </select>
+                            <div class="filter-menu-buttons">
+                                <button class="filter-button reset">
+                                    Reset
+                                </button>
+                                <button class="filter-button apply">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="action-button list active" title="List View">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </button>
+                    <button class="action-button grid" title="Grid View">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="products-area-wrapper tableView">
+                <div class="products-header">
+                    <div class="product-cell image">
+                        상품이미지/상품명
+                        <button class="sort-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                        </button>
+                    </div>
+                    <div class="product-cell category">카테고리<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell sales">판매수<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell stock">재고<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell price">가격<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                </div>
+
+                <!-- ✅ AJAX로 상품이 추가될 부분 -->
+                <div id="productList" class="products-area-wrapper tableView" style="cursor: pointer"></div>
+
+                <!-- 상품 상세 모달 -->
+                <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #30446a; color: white">
+                                <h1 class="modal-title fs-5" id="editProductModalLabel">상품 상세</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <input type="hidden" id="editProductId">
+                                    <div class="mb-3">
+                                        <label for="editProductImage" class="form-label">상품 이미지</label>
+                                        <input class="form-control" type="file" id="editProductImage">
+                                        <img id="editProductImagePreview" src="" width="100" class="mt-2">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductName" class="form-label">상품명</label>
+                                        <input type="text" class="form-control" id="editProductName">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductCategory" class="form-label">카테고리</label>
+                                        <select class="form-select" id="editProductCategory">
+                                            <option value="티셔츠/원피스">티셔츠/원피스</option>
+                                            <option value="점퍼">점퍼</option>
+                                            <option value="아우터/패딩">아우터/패딩</option>
+                                            <option value="레인코트/신발">레인코트/신발</option>
+                                            <option value="한복/드레스">한복/드레스</option>
+                                            <option value="악세서리">악세서리</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductColor" class="form-label">색상</label>
+                                        <input type="text" class="form-control" id="editProductColor">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductSize" class="form-label">사이즈</label>
+                                        <input type="text" class="form-control" id="editProductSize">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductPrice" class="form-label">가격</label>
+                                        <input type="number" class="form-control" id="editProductPrice">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductStock" class="form-label">재고</label>
+                                        <input type="number" class="form-control" id="editProductStock">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" onclick="deleteProduct()">삭제</button>
+                                <button type="button" class="btn btn-primary" onclick="updateProduct()">수정</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--       -----------------------------         상품 관련 끝 ------------------------------------------------------------------------------- -->
+
+            </div>
+        </div>
+
+
+        <!-- Home 사이드바 공간 -->
+        <div id="home" class="content-area">
+
+        </div>
+
+        <!-- MEMBER 공간 -->
+        <div id="member" class="content-area">
+            <div class="products-area-wrapper tableView">
+                <h2 style="color: mediumslateblue; padding: 20px">회원 관리</h2>
+                <form th:action="@{/adminpage}" method="get">
+                    <div class="member-search-bar">
+                        <div style="width: 500px">
+                            <input class="search-bar" placeholder="Search..." type="text" name="searchKeyword">
+                            <button class="admin_page_search_btn" type="submit">검색</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="products-header">
+                    <div class="product-cell category">회원 아이디<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell sales">이름<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell stock">이메일<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell price">휴대폰 번호<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="detail_info">
+                        가입날짜
+                    </div>
+                </div>
+
+
+                <div class="products-row" th:each="member : ${memlist}">
+                    <button class="cell-more-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                    </button>
+                    <div class="product-cell category" th:text="${member.loginId}"></div>
+                    <div class="product-cell sales" th:text="${member.name}"></div>
+                    <div class="product-cell stock" th:text="${member.email}"></div>
+                    <div class="product-cell price" th:text="${member.phone}"></div>
+                    <div class="detail_info" th:text="${#temporals.format(member.createdAt, 'yyyy-MM-dd')}"></div>
+                </div>
+
+                <!-- 페이징 버튼 -->
+                <div class="admin_member_paging">
+                    <a th:if="${currentPage > 0}" th:href="@{/adminpage(page=${currentPage - 1}, searchKeyword = ${param.searchKeyword})} ">이전</a>
+
+                    <span th:text="${currentPage + 1} + ' / ' + ${totalPages}"></span>
+
+                    <a th:if="${currentPage + 1 < totalPages}" th:href="@{/adminpage(page=${currentPage + 1})}">다음</a>
+                </div>
+            </div>
+        </div>
+
+        <!---------------------------------------------------- 커뮤니티 --------------------------------->
+        <div id="community" class="content-area">
+            <div class="products-area-wrapper tableView">
+                <div class="admin_community_title">
+                    <div>
+                        <h2 style="color: mediumslateblue; padding: 20px">게시글 관리</h2>
+                    </div>
+
+                    <div>
+                        <button class="community_write_btn" data-bs-toggle="modal" data-bs-target="#writeModal">게시글 작성</button>
+                    </div>
+                    <!------------------------ 게시글 작성 모달 창  ---------------------------------->
+                    <div class="modal fade" id="writeModal" tabindex="-1" aria-labelledby="writeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #30446a; color: white">
+                                    <h5 class="modal-title" id="writeModalLabel">게시글 작성</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="createPostForm" th:action="@{/admin/faq-notice/create}" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="topicSelect" class="form-label">주제</label>
+                                            <select class="form-select" id="topicSelect" name="topic">
+                                                <option value="FAQ">FAQ</option>
+                                                <option value="NOTICE">공지사항</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="titleInput" class="form-label">제목</label>
+                                            <input type="text" class="form-control" id="titleInput" name="title">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contentInput" class="form-label">내용</label>
+                                            <textarea class="form-control" id="contentInput" name="content" rows="5"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="imageInput" class="form-label">이미지</label>
+                                            <input class="form-control" type="file" id="imageInput" name="imageFile">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                                            <button type="submit" class="btn btn-primary">작성</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------ 게시글 작성 모달 창 끝  ---------------------------------->
+
+                <!-- ------------------------ 게시글 수정 , 삭제 모달 창 -------------------------------- -->
+
+                <!-- 상세 모달창 -->
+                <div id="postModal" class="modal" style="display: none;">
+                    <div id="postContent" class="modal-content" style="overflow: auto">
+                        <span class="close">&times;</span>
+
+                        <label for="modalTitle">제목:</label>
+                        <input type="text" id="modalTitle" class="modal-input">
+
+                        <label for="modalContent">내용:</label>
+                        <textarea id="modalContent" class="modal-textarea"></textarea>
+
+                        <p id="modalDate"></p>
+
+                        <button id="viewImage">이미지 보기</button>
+                        <img id="modalImage" src="" alt="게시글 이미지" style="max-width: 100%; display: none;">
+
+                        <input type="hidden" id="modalPostId">
+
+                        <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+                            <button id="savePost">수정</button>
+                            <button id="deletePost">삭제</button>
+                            <button id="closeModal">닫기</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- ------------------------ 게시글 수정 , 삭제 모달 창 끝 -------------------------------- -->
+
+                <form id="searchForm">
+                    <div class="community_header">
+                        <div class="member-search-bar">
+                            <div style="width: 500px">
+                                <input id="searchQuery" class="search-bar" placeholder="Search..." type="text">
+                                <button class="admin_page_search_btn" type="submit">검색</button>
+                            </div>
+                            <div>
+                                <select id="searchTopic" class="btn-custom">
+                                    <option value="">전체</option>
+                                    <option value="NOTICE">공지사항</option>
+                                    <option value="FAQ">FAQ</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="products-header">
+                    <div class="product-cell category">게시글 번호<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell sales">게시글 종류<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell stock">작성자<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="product-cell price">제목<button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                    </button></div>
+                    <div class="detail_info">
+                        상세보기
+                    </div>
+                </div>
+                <div id="faq-notice-list">
+                    <!-- 게시글 리스트가 여기에 렌더링됩니다. -->
+                </div>
+                <!-- 페이징 버튼 -->
+                <div class="community_member_paging">
+                    <a>이전</a>
+
+                    <span></span>
+
+                    <a>다음</a>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------- 커뮤니티 끝 --------------------------------->
+        <div id="notifications" class="content-area">
+            <h1>Notifications</h1>
+            <p>Check your notifications.</p>
+        </div>
+
+    </div>
+</div>
+<script src="/js/admin.js"></script>
+<script src="/js/adminproduct.js"></script>
+<script>
+    const modalImage = document.getElementById('modalImage');
+
+    document.getElementById('viewImage').addEventListener('click', function() {
+        if (modalImage.style.display === 'none') {
+            modalImage.style.display = 'block';
+        } else {
+            modalImage.style.display = 'none';
+        }
+    });
+
+    // 초기 이미지 숨김 처리 (선택 사항)
+    modalImage.style.display = 'none';
+</script>
+</body>
+</html>

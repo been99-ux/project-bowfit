@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bow fit 입점신청서</title>
+
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 부트스트랩 동작 스크립 다운로드! -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 제이쿼리  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!--   구글 폰트  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Nanum+Brush+Script&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+
+    <!-- 내 스타일  -->
+    <link rel="stylesheet" href="/css/main/styles.css">
+    <link rel="stylesheet " href="/css/about/appform.css">
+
+
+</head>
+<body>
+<!-- 헤더 -->
+<th:block th:replace="common/header::header"></th:block>
+
+<main class="container">
+    <form action="">
+        <div class="form__all">
+            <h1>Bow fit 입점 신청서</h1>
+            <div class="appForm__header">
+                <h3>신청 안내</h3>
+                <p>Bow fit의 '도전!BEST'콘텐츠에 참여하여 귀하의 강아지 옷 아이디어를 세상에 알리고</p>
+                <p>상위 10위 안에 들어 판매 기회를 얻어보세요! 아래의 신청서를 작성하여 제출해 주세요.</p>
+            </div>
+
+            <div class="section">
+                <h5 style="margin-top: 55px">1. 신청자 정보</h5>
+                <div class="form__input">
+                    <div>
+                        <label for="form-name">작가 이름 <span class="required">⛧</span></label>
+                        <input type="text" id="form-name" name="form-name" required>
+                    </div>
+                    <div>
+                        <label for="form-phone">작가 연락처 <span class="required">⛧</span></label>
+                        <input type="text" id="form-phone" name="form-phone" required>
+                    </div>
+                </div>
+                <div class="long_put">
+                    <label for="form-email">작가 이메일 <span class="required">⛧</span></label>
+                    <ul>
+                        <li> 바우핏 회원 이메일을 적어주세요. 바우핏 > 마이페이지 > 내정보 > 이메일</li>
+                        <li> 심사 안내에 대한 중요 메일이 반송되는 경우가 발생됩니다. 중요 메일이 반송 되지 않도록 메일함을 확인해주세요.</li>
+                    </ul>
+                    <input type="email" id="form-email" name="form-email" required>
+                </div>
+                <div class="form__bus_input">
+                    <label for="form-business">사업자명<span class="required">⛧</span></label>
+                    <input type="text" id="form-business" name="form-business" required>
+                </div>
+
+                <div class="long_put">
+                    <label for="form-address">주소 <span class="required">⛧</span></label>
+                    <input type="text"  id="form-address" name="form-address" required>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <h5>2. 아이디어 제안 정보</h5>
+                <div class="form__input">
+                    <div>
+                        <label for="product-name">제품 이름 <span class="required">⛧</span></label>
+                        <input type="text" id="product-name" name="product-name" required>
+                    </div>
+                    <div>
+                        <label for="product-type">제품 종류 (예: 악세서리,티셔츠) <span class="required">⛧</span></label>
+                        <input type="text" id="product-type" name="product-type" required>
+                    </div>
+                </div>
+                <label for="product-description">제품 설명 <span class="required">⛧</span></label>
+                <textarea id="product-description" name="product-description" rows="4"></textarea>
+                <div class="long_put">
+                    <div class="img_upload">
+                        <label for="product-image">제품 이미지 첨부<span class="required">⛧</span></label>
+                        <p>제품 이미지는 심사를 위해 제품 사진이 잘 보일 수 있도록 업로드 해주세요. [최대 10장]</p>
+                    </div>
+                    <input type="file" id="product-image" name="product-image">
+                </div>
+            </div>
+
+            <div class="section">
+                <h5>3. 제품의 주요 특성</h5>
+                <div class="form__input">
+                    <div>
+                        <label for="target-consumer">견종 분류<span class="required">⛧</span></label>
+                        <input type="text" id="target-consumer" name="target-consumer" required>
+                    </div>
+                    <div>
+                        <label for="ingredient">사용된 주요 소재 <span class="required">⛧</span></label>
+                        <input type="text" id="ingredient" name="ingredient" required>
+                    </div>
+                </div>
+
+                <div class="form__input">
+                    <div>
+                        <label for="price">제작 비용 예상 <span class="required">⛧</span>&nbsp (단위: 원)</label>
+                        <input type="number" id="price" name="price" required>
+                    </div>
+                    <div>
+                        <label for="expected-sale-price">희망 판매 가격<span class="required">⛧</span>&nbsp (단위: 원)</label>
+                        <input type="number" id="expected-sale-price" name="expected-sale-price" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="long_put">
+                    <h5>4. 아이디어의 차별성 및 기대 효과</h5>
+                    <div>
+                        <label for="special">이 제품이 특별한 이유는 무엇인가요 <span class="required">⛧</span></label>
+                        <input type="text" id="special" name="special" required>
+                    </div>
+                    <div>
+                        <label for="usage">소비자에게 제공할 수 있는 강점 <span class="required">⛧</span></label>
+                        <input type="text" id="usage" name="usage" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h5>5. 심사 기준 동의 아래의 심사 기준에 따라 평가가 이루어지며, 심사 결과에 이의를 제기할 수 없습니다.</h5>
+                <h5>&nbsp&nbsp&nbsp 동의하시면 체크해 주세요.</h5>
+                <div class="text_box">
+                    <p>[1] 독창성 : 아이디어의 새로움과 창의성</p>
+                    <p>[2] 실현 가능성 : 제품 제작 및 판매의 실현 가능성</p>
+                    <p>[3] 시장성 : 소비자의 반응 및 판매 가능성</p>
+                    <p>[4] 사회적 기여 : 반려동물과 소유주에게 긍정적 영향을 미칠 가능성</p>
+                    <label for="subscribe">
+                        <input type="checkbox" class="styled-checkbox" id="subscribe" name="subscribe"> &nbsp  네, 동의합니다.
+                    </label>
+                </div>
+            </div>
+
+            <div class="section">
+                <h5>6. 개인정보 동의관</h5>
+                <div class="information">
+                    <h4 style="font-weight: 600; font-size: 20px">■ 개인정보 수집이용 동의에 관한 안내사항</h4>
+                    <ul>
+                        <li>개인정보 수집 및 이용에 관한 동의 Bow fit은 아래의 목적에 따라 개인정보를 수집 및 이용합니다.</li>
+                        <li>동의하시면 체크해 주세요.<br>
+                            수집항목 : 이름,연락처,이메일,주소 등 신청서에 작성된 정보<br>
+                            수집 및 이용 목적 : 도전!BEST 컨텐츠 참여 신청 및 심사 과정 진행, 결과 안내<br>
+                            보유 및 이용 기간 : 수집 이용 목적 달성 시 또는 Bow fit 입점 서류 제출일로부터 1년까지
+                        </li>
+                    </ul>
+                    <label for="subscribe_2">
+                        <input type="checkbox" class="styled-checkbox" id="subscribe_2" name="subscribe_2"> &nbsp 네, 동의합니다.
+                    </label>
+                </div>
+            </div>
+
+            <div class="section">
+                <h5>7. 제출 방법</h5>
+                <div class="text_box">
+                    <p>□ 양식 제출</p>
+                    <p>아래 작성 완료 버튼을 클릭시 작성 완료된 신청서가 저희 Bow fit 이메일로 자동 송부 됩니다.</p>
+                    <p>문의 : 010-1234-5678</p>
+                    <br>
+                    <p>Bow fit과 함께 강아지 패션의 새로운 트렌드를 만들어 보세요!</p>
+                </div>
+            </div>
+            <div class="btn__box">
+                <button type="submit" class="submit-btn">제출하기</button>
+            </div>
+
+        </div>
+    </form>
+</main>
+
+<!-- 푸터 -->
+<th:block th:replace="common/footer::footer"></th:block>
+
+<script>
+    // 하이픈(-) 입력 차단 스크립트
+    document.getElementById('phone').addEventListener('keydown', function (event) {
+        // 하이픈(-) 키 코드: 189, 109
+        if (event.key === '-' || event.keyCode === 189 || event.keyCode === 109) {
+            event.preventDefault();  // 하이픈 입력을 막음
+        }
+    });
+
+
+    // 숫자만 입력 가능한 스크립트
+    document.getElementById('phone').addEventListener('keydown', function(event) {
+        // 숫자 키 코드: 48-57 (0-9) 그리고 96-105 (넘버패드 0-9)
+        if (
+            (event.keyCode >= 48 && event.keyCode <= 57) ||  // 숫자 키 0-9 (일반 키보드)
+            (event.keyCode >= 96 && event.keyCode <= 105)    // 숫자 키 0-9 (넘버패드)
+        ) {
+            return;  // 숫자 입력은 허용
+        }
+
+        // Backspace, Delete, Tab, 방향키 등을 허용하려면 추가 체크
+        if (
+            event.key === 'Backspace' || event.key === 'Delete' ||
+            event.key === 'Tab' || event.key === 'ArrowLeft' ||
+            event.key === 'ArrowRight'
+        ) {
+            return;  // 위의 키들은 입력을 막지 않음
+        }
+
+        // 그 외의 키는 입력을 막음
+        event.preventDefault();
+    });
+
+
+</script>
+</body>
+
+</html>

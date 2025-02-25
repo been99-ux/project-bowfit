@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 부트스트랩 동작 스크립 다운로드! -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 부트스트랩 아이콘 라이브러리 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- 부트스트랩 동작 스크립 다운로드! -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+    <!-- 제이쿼리  -->
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- 내 스타일  -->
+    <link href="/css/main/styles.css" rel="stylesheet">
+    <link href="/css/product/cartlist.css" rel="stylesheet">
+</head>
+<body>
+<th:block th:replace="common/header::header"></th:block>
+
+<section class="cart container">
+
+    <h1>나의 찜 목록</h1>
+
+    <div class="cart-items">
+        <table>
+            <thead>
+            <tr>
+                <th>이미지</th>
+                <th>상품정보</th>
+                <th>상품금액</th>
+                <th>선택</th>
+            </tr>
+            </thead>
+            <!-- 장바구니 상품 정보 ! -->
+            <tbody>
+            <tr class="tbody_td">
+                <td>
+                    <input type="checkbox" class="cart-checkbox">
+                    <img src="/images/main/img.png" style="width: 200px">
+                </td>
+                <td>
+                    <div>
+                        <p>M-5XL 퍼피갤러리 뉴 바나나 강아지 패딩...</p>
+                        <span>[옵션: 옐로우/2XL (+9,000원)]</span>
+                    </div>
+                </td>
+                <td class="price" data-unit-price="62000">62,000원</td>
+                <td class="cart_choice">
+                    <div class="cart_choice_box">
+                        <a href="">주문하기</a>
+                        <a href="">장바구니담기</a>
+                        <a href="" class="delete-item">삭제</a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <!-- 2. 합계 및 결제 -->
+    <div class="cart-actions">
+        <div>
+            선택상품을 <a href="#" id="delete-selected">삭제하기</a>
+        </div>
+        <div>
+            <button>전체상품주문</button>
+            <button>관심상품 비우기</button>
+        </div>
+    </div>
+
+    <div class="pagination" style="display: flex; justify-content: center; padding-top: 100px;">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 사이드바  -->
+    <div class="side-bar">
+        <!-- 아이콘 -->
+        <a th:href="@{/cartlist}">
+            <div class="box">
+                <i class="bi bi-cart3"></i>
+            </div>
+        </a>
+        <p>0</p>
+    </div>
+
+</section>
+<th:block th:replace="common/footer::footer"></th:block>
+</body>
+</html>

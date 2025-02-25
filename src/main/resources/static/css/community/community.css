@@ -1,0 +1,538 @@
+/* 커뮤니티 메인 페이지 CSS */
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.community_title {
+    font-family: 'BMJUA',sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+.community_event{
+    font-family: 'BMJUA',sans-serif;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.carousel-item {
+    padding: 20px 10px; /* 위아래 간격 */
+}
+.card {
+    border: none;
+    text-align: center;
+}
+.card img {
+    width: auto;
+    border-radius: 10px;
+    height: 250px;
+    object-fit: cover;
+    padding: 10px;
+}
+.carousel-control-prev-icon {
+    position: absolute;
+    left: -50px;
+    top: 120px;
+    background-color: black; /* 버튼 검은색 */
+    border-radius: 50%;
+    padding: 15px;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    position: absolute;
+    right: -50px;
+    top: 120px;
+    background-color: black; /* 버튼 검은색 */
+    border-radius: 50%;
+    padding: 15px;
+}
+.carousel-indicators {
+    position: absolute;
+    top: 330px;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: black; /* 아래 인디케이터 버튼 검은색 */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* 상자 존 */
+.container-box {
+    max-width: 1200px;
+    margin: auto;
+}
+.card {
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.card-header {
+    font-weight: bold;
+    background-color: #f8f9fa;
+    border-bottom: none;
+}
+.list-group-item {
+    border: none;
+}
+.small-text {
+    font-size: 0.9rem;
+    color: gray;
+}
+.more-link {
+    float: right;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #c6b4ff;
+}
+.more-link:hover {
+    color: #8268c5;
+}
+/* 공지사항 홈페이지 CSS */
+.community_thead {
+    border-top: 1px solid #dee2e6;
+}
+.community_thead tr th{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.community_tbody tr td{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* 커뮤니티 관련 페이지 페이징 버튼 css */
+.page-link {
+    color: #8268c5;
+}
+.page-link:hover{
+    color: #c6b4ff;
+    background: none;
+}
+/* 커뮤니티 관련 서치바 버튼 css */
+.search-bar {
+    display: flex;
+    justify-content: left;
+    gap: 3px;
+    max-width: 600px;  /* 검색 바의 최대 크기 조정 */
+    padding-bottom: 100px;
+    padding-top: 30px;
+}
+
+.search-bar select,
+.search-bar input,
+.search-bar button {
+    height: 30px; /* 높이를 조정 */
+    max-width: 150px;
+}
+
+.search-bar select {
+    width: 120px;  /* 드롭다운 크기 조정 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px; /* 검색창 너비 조정 */
+}
+
+.search-bar button {
+    background-color: #ffffff;
+    color: #8268c5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 3px 15px;
+}
+
+.search-bar button:hover {
+    background-color: #c6b4ff;
+    color: white;
+}
+.search-bar select {
+    width: 80px;
+    font-size: 13px;
+}
+/* 게시물관리 페이지 버튼 */
+.search-bar-user {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    padding-bottom: 100px;
+    padding-top: 30px;
+}
+.search-bar-user select,
+.search-bar-user input,
+.search-bar-user button {
+    height: 30px; /* 높이를 조정 */
+    max-width: 150px;
+}
+
+.search-bar-user select {
+    width: 120px;  /* 드롭다운 크기 조정 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-bar-user input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px; /* 검색창 너비 조정 */
+}
+
+.search-bar-user button {
+    background-color: #ffffff;
+    color: #8268c5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 3px 15px;
+}
+
+.search-bar-user button:hover {
+    background-color: #c6b4ff;
+    color: white;
+}
+.search-bar-user select {
+    width: 80px;
+    font-size: 13px;
+}
+/* Q&A THEAD , TBODY CSS */
+.qna_thead {
+    border-top: 1px solid #dee2e6;
+}
+.qna_thead tr th{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.qna_tbody tr td{
+    padding-top: 38px;
+    padding-bottom: 38px;
+}
+.qna_tbody tr td:nth-child(2) {
+    width: 100px; /* 원하는 크기로 조정 */
+    height: 100px;
+    text-align: center; /* 가운데 정렬 */
+    padding: 0;
+}
+.qna_tbody tr td:nth-child(3){
+    width: 800px;
+}
+.qna_tbody tr td img {
+    width: 100%;  /* 가로 크기를 셀에 맞춤 */
+    height: auto; /* 세로 비율 유지 */
+    display: block; /* 불필요한 여백 제거 */
+    object-fit: cover; /* 셀 크기에 꽉 차게 */
+}
+/* qna 글쓰기 버튼 */
+.community_wirte {
+    display: flex;
+    justify-content: right;
+}
+.community_wirte a {
+    border: 1px solid #ccc;
+    color: #8268c5;
+    font-size: 15px;
+    padding: 15px 45px;
+    border-radius: 5px;
+
+}
+.community_wirte a:hover {
+    background-color: #c6b4ff;
+    color: white;
+}
+
+/* 리뷰 페이지 제목 */
+.review_sub_title {
+    font-family: 'BMJUA',sans-serif;
+}
+.review_box_top{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+.review_box_top p {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.48px;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+.review_box_top span {
+    font-size: 18px;
+    letter-spacing: -.216px;
+    line-height: 22px;
+    --tw-text-opacity: 1;
+    color: rgb(123 132 141/ var(--tw-text-opacity));
+}
+
+/* 리뷰 검색버튼 */
+#search-input {
+    width: 200px;
+}
+#cancel-btn {
+    background-color: #9a88e6;
+    border:none
+}
+#search-confirm-btn {
+    background-color: #8268c5;
+    border: none;
+}
+.review_search {
+    padding-top: 25px;
+}
+.review_sequence {
+    border-bottom: 1px solid gray;
+}
+
+/* 리뷰 상품 카드*/
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+.card-body {
+    padding: 0;
+    margin: 0;
+}
+.card-body p {
+    margin: 0;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 12px;
+}
+.review_product_card {
+    display: flex;
+}
+.review_product_card_img {
+    width: 50px !important;
+    height: auto !important;
+}
+.review_product_text {
+    margin-top: 4px;
+}
+
+/* Q&A 글쓰기 CSS */
+.qna_form_top {
+    font-family: 'BMJUA', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+.qna_form_container {
+    max-width: 960px;
+    border: 1px solid #cdcdcd;
+    padding: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px #eee;
+}
+.qna_form_title_section {
+    display: flex;
+    border-bottom: 1px solid #cdcdcd;
+}
+.qna_form_title {
+    border-right: 1px solid #cdcdcd;
+}
+.qna_form_title p {
+    text-align:left;
+    margin: 0;
+    padding: 10px;
+    width: 120px;
+    background-color: #e3e3e3;
+    font-size: 13px;
+}
+.qna_title {
+    margin-top: 7px;
+    margin-left: 7px;
+}
+.qna_title input {
+    width: 330px;
+    border: 1px solid #cdcdcd;
+}
+.qna_url {
+    margin-top: 7px;
+    margin-left: 7px;
+}
+.qna_url input {
+    width: auto;
+    border: 1px solid #cdcdcd;
+}
+.qna_pw {
+    margin-top: 7px;
+    margin-left: 7px;
+}
+.qna_pw input {
+    width: 170px;
+    border: 1px solid #cdcdcd;
+}
+.qna_content {
+    margin: 15px;
+}
+.qna_content textarea {
+    border: 1px solid #cdcdcd;
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    resize: none;
+    outline: none;
+}
+.qna_content_section {
+    display: flex;
+    border-top: 1px solid #cdcdcd;
+}
+.qna_radio_box {
+    margin-top: 8px;
+    margin-left: 7px;
+}
+.qna_warning {
+    max-width: 960px;
+    padding: 0;
+    margin-bottom: 30px;
+}
+.qna_warning p {
+    font-size: 12px;
+    color: #8f8d8d;
+    margin-bottom: 8px;
+}
+.qna_btn {
+    display: flex;
+    justify-content: space-between;
+    max-width: 960px;
+    padding: 0;
+    margin-bottom: 100px;
+}
+.qna_reset {
+    border: 1px solid black;
+    padding: 10px 30px;
+}
+.qna_post, .qna_cancel, .qna_reset {
+    border: 1px solid #cdcdcd;
+    padding: 10px 35px;
+    background-image: linear-gradient(to right, #c6b4ff 0%, #a6c1ee 51%, #c6b4ff 100%);
+    cursor: pointer;
+    box-shadow: 0 0 20px #eee;
+    color: white;
+    text-transform: uppercase;
+}
+.qna_post:hover, .qna_cancel:hover {
+    background-color: #cdcdcd;
+}
+/* ------------ 여기서 부터는 FAQ NOTICE CONTENT 페이지 -----------------------*/
+.notice_title {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 35px;
+}
+.notice_content {
+    text-align: center;
+}
+.notice_list {
+    border: 1px solid black;
+    padding: 8px 13px;
+    width: 160px;
+}
+.next_post {
+    text-align: right;
+}
+.prev-next-btn {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.notice_list_btn {
+    background-color: #9a88e6;
+    width: 120px;
+    height: 40px;
+    padding-top: 8px;
+}
+.notice_list_btn:hover {
+    background-color: #8268c5;
+}
+.btn-outline-primary {
+    color: #9a88e6;
+    border: 1px solid #9a88e6;
+}
+.badge{
+    cursor: pointer;
+}
+.view_background {
+    background-color: rgba(244, 244, 244, 0.92);
+}
+.alert{
+    background: none;
+    border: none;
+}
+.qna_answer_title {
+    padding: 20px;
+    font-weight: bold;
+}
+.qna_answer_user_name {
+    color: #5e5e5e;
+    font-size: 22px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+.qna_answer_user_content {
+    padding: 100px 30px 100px 20px;
+}
+.qna_content_list_answer {
+    display: flex;
+    justify-content: space-between;
+}
+.qna_content_list_btn , .qna_content_answer_btn{
+    border: 1px solid #cdcdcd;
+    padding: 10px 35px;
+    background-color: black;
+    cursor: pointer;
+    box-shadow: 0 0 20px #eee;
+    color: white;
+    text-transform: uppercase;
+}
+.qna_content_list_btn:hover, .qna_content_answer_btn:hover {
+    background-color: #5e5e5e;
+}
+.qna_answer_content_pad {
+    padding: 100px 30px 100px 0px;
+}
+.qna_answer_content {
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    width: 40%;
+    padding: 20px;
+    background-color: #fafafa;
+}
+.qna_answer_admin {
+    font-weight: bold;
+    padding-right: 12px;
+}
+.qna_comment_area {
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 80px;
+    background-color: #fafafa;
+}
+.qna_comment_btn {
+    display: flex;
+    justify-content: right;
+}
+.qna_comment_textarea {
+    width: 1255px;
+}
+.alert-info {
+    text-align: center;
+}
+.view_background {
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+}
+

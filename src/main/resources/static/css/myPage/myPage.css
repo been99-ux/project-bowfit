@@ -1,0 +1,219 @@
+/* 제목과 부제목 */
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#myPage_title {
+    font-family: 'BMJUA',sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+.myPage_content {
+    border: 5px solid #bcbcbc;
+    padding: 20px 50px 20px 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.myPage_section h4 {
+    font-family: 'BMJUA',sans-serif;
+    font-size: 20px;
+}
+.myPage_section h3 {
+    font-family: 'BMJUA',sans-serif;
+    font-size: 20px;
+    color: gray;
+}
+.myPage_use_point {
+    padding-right: 59px;
+
+}
+
+.myPage_title_second {
+    display: flex;
+    justify-content: space-between;
+}
+
+.myPage_total {
+    padding-left: 20px;
+}
+.myPage_second_section {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 5px solid #bcbcbc;
+}
+
+.myPage_point{
+    padding-right: 20px;
+}
+.list-unstyled {
+    padding-left: 160px;
+}
+
+/* MyPage Section ! */
+.container-box {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0;
+}
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 20px;
+}
+.box-wrapper {
+    width: 50%; /* 2열로 균등 배치 */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 정사각형 유지 */
+    background-color: white;
+    border: 5px solid #bcbcbc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.box img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 0;
+}
+.row-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+.background_box {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 정사각형 유지 */
+    border: 5px solid #bcbcbc;
+    border-radius: 10px;
+}
+
+
+/* 마일리지 히스토리 페이지 css */
+#mileage_title {
+    font-family: 'BMJUA',sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+/* 페이징 버튼 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    color: #5e5e5e; !important;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #5e5e5e !important;
+}
+
+
+.page-link {
+    color: #8268c5;
+}
+.page-link:hover{
+    color: #c6b4ff;
+}
+
+
+.page-link:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: none;
+}
+/* 탭 테이블 존 */
+table {
+    border: 1px #a39485 solid;
+    font-size: .9em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: left;
+}
+
+th {
+    text-align: left;
+}
+
+thead {
+    font-weight: bold;
+    color: #fff;
+    background: #5e5e5e;
+}
+
+td, th {
+    padding: 1em .5em;
+    vertical-align: middle;
+}
+
+td {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    background: #fff;
+}
+
+.coupon_list {
+    font-family: 'BMJUA',sans-serif;
+}
+
+@media all and (max-width: 768px) {
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        text-align: right;
+    }
+
+    table {
+        position: relative;
+        padding-bottom: 0;
+        border: none;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+    }
+
+    thead {
+        float: left;
+        white-space: nowrap;
+    }
+
+    tbody {
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+        white-space: nowrap;
+    }
+
+    tr {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    th {
+        border-bottom: 1px solid #a39485;
+    }
+
+    td {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+}
+

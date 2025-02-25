@@ -1,0 +1,124 @@
+/* 폰트 적용 */
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 토글 버튼 스타일 */
+.toggle-section {
+    width: 100%;
+    padding: 12px 20px;
+    cursor: pointer;
+    background-color: #f8f9fa; /* 연한 회색 배경 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* 호버 효과 */
+.toggle-section:hover {
+    background-color: #e9ecef; /* 조금 더 진한 회색 */
+}
+
+
+.toggle-content {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff; /* 흰색 배경 */
+    margin-top: 5px;
+}
+
+/* 토글이 활성화되었을 때 */
+.toggle-content.active {
+    display: block;
+}
+
+/* 중앙 정렬 */
+.text-center {
+    font-family: 'BMJUA', sans-serif;
+    font-size: 50px;
+    padding: 50px;
+}
+
+/* 결제 폼 스타일 */
+.banner {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 테이블 스타일 */
+.tb {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #e3e3e3;
+}
+
+.tb th, .tb td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.tb th {
+    background-color: white;
+    width: 100px;
+    font-size: 13px;
+}
+
+.tb td {
+    background-color: white;
+}
+
+/* 받는 사람 input */
+#Recipient {
+    width: 100%;
+}
+
+/* input, select 공통 스타일 */
+.tb input, .tb select {
+    height: 42px;
+    border: 1px solid #e3e3e3;
+    font-size: 13px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* 주소 input */
+#sample6_detailAddress,
+#sample6_address {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* 이메일 */
+#emailId, #domain-list {
+    width: 48%;
+}
+
+/* 전화번호 input */
+#phone1, #phone2, #phone3 {
+    width: 31%;
+}
+
+/* 결제하기 버튼 */
+.btn_submit {
+    width: 100%;
+    height: 50px;
+    background-color: #C6B5FF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn_submit:hover {
+    color: black;
+    background-color: #e0d7fb;
+}

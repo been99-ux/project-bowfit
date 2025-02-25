@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bow fit Story</title>
+
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 부트스트랩 동작 스크립 다운로드! -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 제이쿼리  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!--   구글 폰트  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Nanum+Brush+Script&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+
+    <!-- 내 스타일  -->
+    <link rel="stylesheet" href="/css/main/styles.css">
+    <link rel="stylesheet" href="/css/about/company.css">
+
+</head>
+<body>
+<!-- 헤더 -->
+<th:block th:replace="common/header::header"></th:block>
+
+    <div class="container">
+        <div class="office__center">
+            <!--   회사소개 타이틀 이미지    -->
+            <div class="office__tit_img">
+                <img src="/images/about/companyStory.jpg">
+            </div>
+            <!--   회사 소개     -->
+            <div class="office__tit_info">
+                <p>Bow fit의 시작</p>
+            </div>
+            <div class="office__info">
+                <p><span>"Bow fit"</span>은 강아지들에게 최고의 스타일을 선사하는 브랜드로,</p>
+                <p> 우리의 사랑스러운 반려견들이 더욱 편안하고 멋진 옷을 입을 수 있도록 하는 목표에서 출발했습니다.</p>
+                <p>강아지들도 패션을 즐기고, 그들의 개성과 스타일을 표현할 수 있는 옷이 필요하다는 생각에서부터</p>
+                <p>시작된 우리의 여정은 오늘날 다양한 브랜드의 고품질 제품들을 엄선하여 소개하는 스토어로 발전하였습니다.</p>
+            </div>
+            <div class="office__story_img">
+                <img src="/images/about/companyStory3.png">
+            </div>
+            <br><br><br>
+            <div class="office__tit_text">
+                <p>Bow fit의 가치</p>
+            </div>
+            <div class="office__text">
+                <p>저희 Bow fit은 강아지들의 편안함과 스타일을 모두 고려한 옷을 제공합니다.</p>
+                <p>모든 제품은 철저하게 검수되어, 착용감이 뛰어나고 튼튼함은 물론, 개성 넘치는 디자인으로 반려건들의 패션을 완성합니다.</p>
+                <p>Bow fit은 단순히 '옷'을 파는 곳이 아니라, 강아지들의 행복한 일상을 위한 작은 선물을 전하는 공간입니다.</p>
+            </div>
+            <br><br>
+            <div class="office__tit_text">
+                <p>Bow fit의 비전</p>
+            </div>
+            <div class="office__text">
+                <p>"Bow fit"은 앞으로도 계속해서 강아지들이 가장 사랑받을 수 있도록, 최신 트렌드와 최고의 품질을 갖춘 제품들을 선보여 나갈 것입니다.</p>
+                <p>또한, 추후에는 고객님들과 반려견들의 특별한 추억을 쌓을 수 있도록 반려견과 고객님들의 커플 옷을 제작할 예정이며</p>
+                <p>고객님들이 신뢰하고 지속적으로 찾는 브랜드로 성장할 수 있도록, 진정성과 품질을 바탕으로 한 서비스를 제공하겠습니다.</p>
+            </div>
+            <br><br><br><br><br>
+        </div>
+    </div>
+
+<!-- 푸터 -->
+<th:block th:replace="common/footer::footer"></th:block>
+</body>
+</html>

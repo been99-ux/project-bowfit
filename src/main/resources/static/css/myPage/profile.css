@@ -1,0 +1,205 @@
+/* profile CSS */@font-face {
+    font-family: 'BMJUA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.allprofile{
+    max-width: 100%;
+}
+
+.profile{
+    font-family: 'BMJUA',sans-serif;
+    font-size: 50px;
+    padding: 50px;
+    justify-content: center;
+    display: flex;
+}
+
+.input[type=text]{
+    height: 24px;
+    line-height: 26px;
+    padding: 2px 4px;
+    border: 1px solid #BABCCC;
+    font-size: 13px;
+
+}
+
+/* 회원정보 폼 스타일 */
+#signupForm {
+    width: 100%;
+}
+
+.tb {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tb th, .tb td {
+    border: 1px solid #BABCCC;
+    padding: 10px;
+}
+
+.tb th {
+    background-color: #ccc;
+    text-align: left;
+    width: 150px;
+}
+
+.tb td {
+    background-color: white;
+    margin: 5px;
+}
+
+.tb input {
+    height: 28px;
+    width: 190px;
+    border: 1px solid #e3e3e3;
+    font-size: 13px;
+}
+
+.dl, ol, ul{
+    margin-bottom: auto;
+}
+.ol, ul{
+    padding-left: 0;
+    margin: -10px;
+}
+
+/* 주소 부분 스타일 */
+
+.tb td ul li {
+    border-bottom: 1px solid #BABCCC;
+    padding: 10px;
+    display: flex; /* flexbox 사용 */
+    align-items: center; /* 수직 가운데 정렬 */
+}
+
+.tb td ul li #sample6_postcode {
+    width: 100px;
+    margin-right: 5px;
+}
+
+.tb td ul li input[type="button"] {
+    width: auto;
+    padding: 3.5px 15px; /* padding 값 조정 (버튼 크기 미세 조정) */
+
+
+}
+
+.tb td ul li:last-child {
+    border-bottom: none; /* 마지막 <li> 태그의 border-bottom 제거 */
+}
+
+.btn_submit:hover{
+    background-color: #c6b4ff;
+    color: #383838;
+}
+
+/* 상세 주소 input 넓이 조정 */
+#sample6_detailAddress {
+    margin-top: 7px; /* 다른 주소 요소와 간격 맞춤 */
+}
+/* 주소 input 넓이 조정 */
+#address1{
+    width: 400px;
+}
+#address2{
+    width: 300px;
+}
+
+/* 휴대폰 번호 input 크기 조절 */
+.tb td input[type="text"][size="2"],  /* 첫 번째 input */
+.tb td input[type="text"][size="4"] { /* 두 번째, 세 번째 input */
+    height: 28px; /* 원하는 높이로 변경 */
+    width: auto; /* 필요에 따라 width 조절 */
+    padding: 5px; /* 필요에 따라 padding 조절 */
+    box-sizing: border-box; /* border, padding 포함하여 width 계산 */
+}
+
+
+/* 회원정보 수정 버튼 */
+.base_btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+
+}
+
+.btn_submit {
+    width: 200px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    background-color: #383838;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+    border: 2px solid #383838;
+    box-sizing: border-box;
+}
+
+.btn_submit:hover {
+    background-color: #c6b4ff;
+    color: #383838;
+    border: 2px solid #c6b4ff;
+}
+
+.btn_cancel_submit{
+    width: 200px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    background-color: white;
+    color: #383838;
+    text-decoration: none;
+    border: 2px solid #383838;
+    box-sizing: border-box;
+}
+
+.btn_cancel_submit:hover{
+    background-color: #383838;
+    color: white;
+
+}
+.allprofile th span {
+    color: red;
+}
+
+/* 회원 탈퇴 */
+.withdraw-container {
+    text-align: right;
+    margin-bottom: 20px;
+
+}
+
+/* 회원탈퇴 버튼 스타일 */
+.btn_withdraw {
+    background-color: #dc3545; /* 붉은색 */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn_withdraw:hover {
+    background-color: #c82333;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+    #signup {
+        width: 90%;
+    }
+}
+/* 회원정보 유효성 검사 글씨 사이즈 */
+#idValidationMessage, #idDuplicateMessage, #idAvailableMessage, #passwordValidationMessage , #passwordMatchMessage {
+    font-size: 13px;
+}

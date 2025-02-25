@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 부트스트랩 동작 스크립 다운로드! -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 부트스트랩 아이콘 라이브러리 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- 부트스트랩 동작 스크립 다운로드! -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+    <!-- 제이쿼리  -->
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- 내 스타일  -->
+    <link href="/css/main/styles.css"
+          rel="stylesheet">
+
+    <!-- 상품 상세 페이지 스타일 -->
+    <link href="/css/product/productinfo.css"
+          rel="stylesheet">
+</head>
+<body>
+<!-- ============================== header 부분 ============================== -->
+<th:block th:replace="common/header::header"></th:block>
+<!--<th:block th:replace="common/category::category"></th:block>-->
+
+
+<!-- ============================== main 부분 시작 ============================== -->
+<main class="main__productinfo">
+
+    <div class="main__piContainer">
+        <div class="main__containerLbox">
+            <!-- 대표 이미지 영역 -->
+            <a href="#">
+                <img id="main_img" src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="상품 대표이미지">
+            </a>
+
+            <div class="box__contentList">
+                <a id="main_img1" href="javascript:void(0);">
+                    <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="이미지목록1" data-image="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg">
+                </a>
+                <a id="main_img2" href="javascript:void(0);">
+                    <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄2.jpg" alt="이미지목록2" data-image="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄2.jpg">
+                </a>
+                <a id="main_img3" href="javascript:void(0);">
+                    <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄3.jpg" alt="이미지목록3" data-image="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄3.jpg">
+                </a>
+                <a id="main_img4" href="javascript:void(0);">
+                    <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄4.jpg" alt="이미지목록4" data-image="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄4.jpg">
+                </a>
+            </div>
+        </div>
+        <div class="main__containerRbox">
+            <h1>퍼피아 핑카홀릭 하네스 리드줄 !! </h1>
+            <div class="product__detail">
+                <p>상품가격 : </p>
+                <p>적립급(구매금액의 5%) : </p>
+                <p>배송비 : </p>
+                <div class="selBox">
+                    <p>색상/사이즈 :
+                        <select name="옵션선택" id="">
+                            <option>브라운 / S</option>
+                            <option>브라운 / M</option>
+                            <option>브라운 / L</option>
+                            <option>그레이 / S</option>
+                            <option>그레이 / M</option>
+                            <option>그레이 / L</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="main__btn">
+                    <button id="buyButton">구매하기</button>
+                    <button>장바구니</button>
+                    <button style="margin-right: 10px;">찜 하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="continue__shop_btn">
+    <button id="continue__shop">이전으로</button>
+</div>
+<!-- ============================== main 부분 끝 ============================== -->
+<!-- ============================== nav 부분 시작 ============================== -->
+<div class="product__nav">
+    <div class="product__navtab">
+        <nav class="nav__tab">
+            <span>상품정보</span>
+            <a href="#product_tab2">상품후기</a>
+            <a href="#product_tab3">상품문의</a>
+            <a href="#product_tab4">배송/교환/환불 안내</a>
+        </nav>
+
+        <section class="product_tab_section" id="product_tab1">
+            <h2>상품정보</h2>
+            <hr>
+            <div class="product_tab_info">
+                <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="이미지목록1">
+                <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄2.jpg" alt="이미지목록2">
+                <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄3.jpg" alt="이미지목록3">
+                <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄4.jpg" alt="이미지목록4">
+            </div>
+
+
+        </section>
+        <nav class="nav__tab">
+            <a href="#product_tab1">상품정보</a>
+            <span>상품후기</span>
+            <a href="#product_tab3">상품문의</a>
+            <a href="#product_tab4">배송/교환/환불 안내</a>
+        </nav>
+
+        <div class="review_write">
+            <div class="review_write_content">
+                <a th:href="@{/community/review}">후기 남기기</a>
+            </div>
+        </div>
+
+        <section class="product_tab_section" id="product_tab2">
+            <h2>상품후기</h2>
+            <p>실제 구매후기를 작성해주세요~</p>
+            <hr>
+
+            <!-- 첫 번째 리뷰 -->
+            <div class="review_content">
+                <div class="review_left">
+                    <span class="review_detail">고객이 구매한 상품 정보 띄우기</span>
+                    <br><br><br>
+                    <span>고객 리뷰 글자 수 제한 100글자 / 너무 마음에 들어용</span>
+                </div>
+                <div class="review_right">
+                    <span class="review_rating">★★★★★</span>
+                    <span class="review_nickname">닉네임</span>
+                    <span class="review_date">2023-12-25</span>
+                </div>
+                <div class="review_images" id="slider1">
+                    <button class="slider_button prev" onclick="moveSlide(-1, 'slider1')">&#8249;</button>
+                    <div class="slider_wrapper">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                    </div>
+                    <button class="slider_button next" onclick="moveSlide(1, 'slider1')">&#8250;</button>
+                </div>
+            </div>
+
+            <!-- 두 번째 리뷰 -->
+            <div class="review_content">
+                <div class="review_left">
+                    <span class="review_detail">고객이 구매한 상품 정보 띄우기</span>
+                    <br><br><br>
+                    <span>고객 리뷰 글자 수 제한 100글자 / 너무 마음에 들어용</span>
+                </div>
+                <div class="review_right">
+                    <span class="review_rating">★★★★★</span>
+                    <span class="review_nickname">닉네임</span>
+                    <span class="review_date">2023-12-25</span>
+                </div>
+                <div class="review_images" id="slider2">
+                    <button class="slider_button prev" onclick="moveSlide(-1, 'slider2')">&#8249;</button>
+                    <div class="slider_wrapper">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                    </div>
+                    <button class="slider_button next" onclick="moveSlide(1, 'slider2')">&#8250;</button>
+                </div>
+            </div>
+
+            <!-- 세 번째 리뷰 -->
+            <div class="review_content">
+                <div class="review_left">
+                    <span class="review_detail">고객이 구매한 상품 정보 띄우기</span>
+                    <br><br><br>
+                    <span>고객 리뷰 글자 수 제한 100글자 / 너무 마음에 들어용</span>
+                </div>
+                <div class="review_right">
+                    <span class="review_rating">★★★★★</span>
+                    <span class="review_nickname">닉네임</span>
+                    <span class="review_date">2023-12-25</span>
+                </div>
+                <div class="review_images" id="slider3">
+                    <button class="slider_button prev" onclick="moveSlide(-1, 'slider3')">&#8249;</button>
+                    <div class="slider_wrapper">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                        <img src="/images/product/accessories/퍼피아_핑카홀릭_하네스리드줄1.jpg" alt="리뷰 이미지">
+                    </div>
+                    <button class="slider_button next" onclick="moveSlide(1, 'slider3')">&#8250;</button>
+                </div>
+            </div>
+
+        </section>
+        <nav class="nav__tab">
+            <a href="#product_tab1">상품정보</a>
+            <a href="#product_tab2">상품후기</a>
+            <span>상품문의</span>
+            <a href="#product_tab4">배송/교환/환불 안내</a>
+        </nav>
+
+        <div class="review_write">
+            <div class="review_write_content">
+                <a th:href="@{/qna}">문의 남기기</a>
+            </div>
+        </div>
+
+        <section class="product_tab_section p__t__qna" id="product_tab3">
+            <h2>상품문의</h2>
+            <p>상품 Q&A 입니다.</p>
+
+            <hr>
+
+            <div id="qnaContainer">
+                <!-- 문의게시글 여기 -->
+            </div>
+
+            <img id="noQnaImage" src="/images/product/게시물없음.png" alt="게시물이없을때" style="display: none;">
+        </section>
+
+        <nav class="nav__tab">
+            <a href="#product_tab1">상품정보</a>
+            <a href="#product_tab2">상품후기</a>
+            <a href="#product_tab3">상품문의</a>
+            <span>배송/교환/환불 안내</span>
+        </nav>
+        <section class="product_tab_section p__t__delivery" id="product_tab4">
+            <h3>상품 결제정보</h3>
+            <hr><br><br>
+            <p> &nbsp;고액결제의 경우 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다. <br>
+                확인과정에서 도난 카드의 사용이나 타인 명의의 주문등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.<br>
+                <br>
+                &nbsp;무통장 입금은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다.<br>
+                주문시 입력한 입금자명과 실제입금자의 성명이 반드시 일치하여야 하며, 7일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.</p>
+            <br><br><br><br>
+            <h3>배송안내</h3>
+            <hr><br><br>
+            <p>&nbsp; 제주도 추가배송비 3000/ 제주도산간벽지 6000 </p>
+
+            <br><br><br><br>
+            <h3>교환 및 반품안내</h3>
+            <hr><br><br>
+            <p>&nbsp;상품마다 공급처가 다르므로 반품또한 상이합니다. <br>
+                <br>
+                &nbsp;반품이나 교환시엔 접수후 고객센터에 문의 후 진행해주세요<br>
+                소비자가 직접 반품시에 따로 택배비가 부과될수도 있습니다.<br>
+                <br>
+                &nbsp;교환 및 반품이 가능한 경우<br>
+                - 상품을 공급 받으신 날로부터 7일이내 단, 가전제품의<br>
+                경우 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환/반품이 불가능합니다.<br>
+                - 공급받으신 상품 및 용역의 내용이 표시.광고 내용과<br>
+                다르거나 다르게 이행된 경우에는 공급받은 날로부터 3월이내, 그사실을 알게 된 날로부터 30일이내<br>
+                <br>
+                &nbsp;교환 및 반품이 불가능한 경우<br>
+                - 고객님의 책임 있는 사유로 상품등이 멸실 또는 훼손된 경우. 단, 상품의 내용을 확인하기 위하여<br>
+                포장 등을 훼손한 경우는 제외<br>
+                - 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우<br>
+                (예 : 가전제품, 식품, 음반 등, 단 액정화면이 부착된 노트북, LCD모니터, 디지털 카메라 등의 불량화소에<br>
+                따른 반품/교환은 제조사 기준에 따릅니다.)<br>
+                - 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 단, 화장품등의 경우 시용제품을<br>
+                제공한 경우에 한 합니다.<br>
+                - 시간의 경과에 의하여 재판매가 곤란할 정도로 상품등의 가치가 현저히 감소한 경우<br>
+                - 복제가 가능한 상품등의 포장을 훼손한 경우<br>
+                (자세한 내용은 고객만족센터 1:1 E-MAIL상담을 이용해 주시기 바랍니다.)<br>
+                <br>
+                &nbsp;※ 고객님의 마음이 바뀌어 교환, 반품을 하실 경우 상품반송 비용은 고객님께서 부담하셔야 합니다.<br>
+                (색상 교환, 사이즈 교환 등 포함)</p>
+            <br><br><br>
+
+        </section>
+    </div>
+</div>
+<br><br><br>
+<!-- ============================== nav 부분 끝 ============================== -->
+<!-- 사이드바  -->
+<div class="side-bar">
+    <!-- 아이콘 -->
+    <a th:href="@{/cartlist}">
+        <div class="box">
+            <i class="bi bi-cart3"></i>
+        </div>
+    </a>
+    <p>0</p>
+</div>
+<th:block th:replace="common/footer::footer"></th:block>
+
+<script src="/js/productinfo.js"></script>
+</body>
+</html>
+
+

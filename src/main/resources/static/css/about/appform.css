@@ -1,0 +1,190 @@
+body{
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+/* 메인 타이틀 문구 */
+.container h1{
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #333;
+}
+/* 양식 전체 틀 */
+.form__all{
+    margin: 100px 100px 120px;
+    padding: 70px;
+    border: 1px solid #BABCCC;
+}
+
+.appForm__header h3{
+    padding: 10px;
+    margin-bottom: 0px;
+    font-weight: 700;
+}
+.appForm__header p{
+    padding: 3px;
+    margin: 0px 0px 5px 10px;
+    font-weight: 600;
+}
+
+/* input 이름 설정 */
+.section{
+    padding: 10px;
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+.section h5{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 신청안내 문구 폰트 설정*/
+.section p{
+    margin: 3px;
+    font-size: 18px;
+}
+
+/*  * 표시 빨강 포인트 */
+.required{
+    color: red;
+}
+
+/* 작성칸 설정 */
+.section label {
+    display: block;
+    margin-top: 10px;
+}
+
+/* input 가로 정렬 설정*/
+.form__input{
+    display: flex;
+}
+
+/* input div 위치 설정*/
+.form__input div{
+    margin: 10px 40px 10px 0px;
+}
+.long_put div{
+    margin: 30px 40px 10px 0px;
+}
+.form__bus_input{
+    margin: 20px 40px 20px 0px;
+}
+
+/* input 창 크기 설정 select*/
+.form__input input{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form__bus_input input{
+    width: 23%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 긴 input 창 크기 설정*/
+.long_put input{
+    width: 49%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* section 1번 ul, li 설정*/
+.long_put ul{
+    margin-top: 8px;
+    padding-left: 15px;
+}
+.long_put li{
+    list-style: disc;
+    color: #8f8d8d;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* 제품 설명 입력칸 */
+textarea{
+    width: 70%;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* section 2번 업로드 설정*/
+.img_upload{
+    display: flex;
+}
+.img_upload p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #8f8d8d;
+    margin: 12px 0px 0px 30px;
+}
+/* section 5 div 위치 */
+.text_box{
+    margin-top: 30px;
+    margin-left: 40px;
+    font-weight: 600;
+}
+.text_box label{
+    margin-top: 30px;
+    margin-left: 25px;
+    font-weight: 600;
+}
+/* section 5,7 p태그 설정 */
+.text_box p{
+    font-size: 18px;
+
+}
+
+/* section 6 div 위치, li 설정 */
+.information{
+    margin-left: 30px;
+}
+.information label{
+    margin: 10px 0px 0px 35px;
+}
+.information li{
+    list-style: disc;
+    color: #8f8d8d;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* 체크박스 동의 버튼 */
+.styled-checkbox{
+    margin-top: 10px;
+}
+
+/* 제출 버튼 */
+.btn__box{
+    display: flex;
+    justify-content: center;  /* 수평 가운데 정렬 */
+    align-items: center;      /* 수직 가운데 정렬 (옵션, 필요 시 사용) */
+    height: 200px;            /* 부모 요소에 높이를 주어 수직 정렬을 테스트 */
+}
+
+.submit-btn {
+    background-color: #c6b4ff;
+    color: white;
+    padding: 17px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: #BABCCC;
+}
+
+.styled-checkbox{
+    width: 15px;
+    height: 15px;
+}

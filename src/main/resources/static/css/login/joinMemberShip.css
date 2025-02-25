@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.text-center{
+    font-family: 'BMJUA',sans-serif;
+    font-size: 50px;
+    padding: 50px;
+}
+
+/* 회원가입 폼 스타일 */
+#signupForm {
+    width: 100%;
+}
+
+.tb {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tb th, .tb td {
+    border: 1px solid #BABCCC;
+    padding: 10px;
+}
+
+.tb th {
+    background-color: #ccc;
+    text-align: left;
+    width: 150px;
+}
+
+.tb td {
+    background-color: white;
+    margin: 5px;
+}
+
+.tb input {
+    height: 24px;
+    width: auto;
+    border: 1px solid #e3e3e3;
+    font-size: 13px;
+}
+/*#sample6_address{*/
+/*    margin-top: 2px;*/
+/*    width: 160px;*/
+/*}*/
+/*#sample6_detailAddress {*/
+/*    margin-top: 2px;*/
+/*    width: 160px;*/
+/*}*/
+
+/*.address-wrapper {*/
+/*    display: flex;*/
+/*}*/
+
+/*.address-wrapper input {*/
+/*    margin-right: 10px; !* 필요에 따라 간격 조절 *!*/
+/*}*/
+/*!* 성별 선택 박스 스타일 *!*/
+/*.gender-container {*/
+/*    display: flex;*/
+/*    justify-content: flex-start;*/
+/*    align-items: center;*/
+/*    gap: 10px;*/
+/*}*/
+/* 이메일 선택 박스 */
+select.box {
+    box-sizing: border-box;
+    border: 1px solid #d9d6d6;
+    color: #383838;
+    font-family: 'Montserrat', 'Pretendard', sans-serif;
+}
+/* 생년월일 박스  */
+.info#birth-year{
+    margin: auto;
+}
+
+.info#info__birth {
+    display: flex;
+}
+
+.info#info__birth select {
+    margin-right: 10px;
+}
+
+.info#info__birth select:first-child {
+    margin-left : 3px;
+}
+/* h3(전체동의) 왼쪽 정렬 */
+.terms-title {
+    font-family: 'BMJUA',sans-serif;
+    text-align: left;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    margin: auto;
+}
+
+/* 약관 동의 박스 */
+.terms-box {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.terms-box label {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* 회원가입 버튼 */
+.base_btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.btn_submit {
+    width: 200px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    background-color: #222222;
+    color: white;
+    text-decoration: none;
+}
+
+.btn_submit:hover {
+    background-color: #c6b4ff;
+    color: #383838;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+    #signup {
+        width: 90%;
+    }
+}
+
+/* 회원가입 별표 표시*/
+tbody th span{
+    color: #d32020;
+}
+/* 회원가입 안내문 */
+#pwMsg, #idMsg{
+    color: #5e5e5e;
+    font-size: 13px;
+}
+/* 회원가입 유효성 검사 글씨 사이즈 */
+#idValidationMessage, #idDuplicateMessage, #idAvailableMessage, #passwordValidationMessage , #passwordMatchMessage {
+    font-size: 13px;
+}
